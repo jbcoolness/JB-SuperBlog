@@ -1,17 +1,24 @@
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col-xl">
             <% @posts.each do |post| %>
-            <div class="card mb-3" style="max-width: 540px;">
+            <div class="card mb-3">
                 <div class="row no-gutters">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <img src="<%= post.image %>" class="card-img" alt="...">
                   </div>
-                  <div class="col-md-8">
+                  <div class="col-md-9">
                     <div class="card-body">
-                      <h5 class="card-title"> <%= post.title %> </h5>
-                      <p class="card-text"><small class="text-muted">post.user_id</small></p>
-                      <p class="card-text"> <%= post.content %> </p>
+                      <h2 class="card-title"> <%= post.title %> </h2>                      
+                      <p class="card-text"><small class="text-muted"> Creado hace <%= time_ago_in_words(post.created_at) %> Por: <%= post.user_id %> </small></p>
+                      <p class="card-text">
+                        <%if post.content.length > 250 %> 
+                          <%= truncate(post.content, length: 250) %>
+                            <%= link_to  "Leer mas...", post, class: "btn btn-outline-primary btn-sm" %>
+                          <% else %>
+                            <%= link_to  post.content %>                          
+                        <% end %>                      
+                      </p>
                       
                     </div>
                   </div>
