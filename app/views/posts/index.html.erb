@@ -16,8 +16,15 @@
                           <%= truncate(post.content, length: 250) %>
                             <%= link_to  "Leer mas...", post, class: "btn btn-outline-primary btn-sm" %>
                           <% else %>
-                            <%= link_to  post.content %>                          
-                        <% end %>                      
+                            <%= post.content %>                          
+                        <% end %>
+                        <% if user_signed_in? %>
+                            <% if current_user.id == post.user_id %>
+                                <%= link_to  "Editar", edit_post_path(post), class: "btn btn-outline-secondary btn-sm" %>
+                                <%= link_to  "Eliminar", post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %>
+                            <% end %>                          
+                        <% end %>
+                        
                       </p>
                       
                     </div>

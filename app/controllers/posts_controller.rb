@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @post.user =  current_user
+    @post.user = current_user
   end
 
   def create
@@ -22,6 +22,19 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+    @post.user = current_user
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.user = current_user
+    @post.update(post_params)
+
+    redirect_to root_path
   end
 
 
