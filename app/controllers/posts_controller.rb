@@ -12,10 +12,9 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user =  current_user
     if @post.save
-      flash[:notice] = "Post Creado"
+      flash[:notice] = "Post creado correctamente"
       redirect_to root_path
     else
-      flash[:notice] = "Error, intente nuevamente"
       render :new
     end
   end
@@ -32,9 +31,23 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.user = current_user
+    
     @post.update(post_params)
+    if @post.save
+      flash[:notice] = "Post actualizado correctamente"
+      redirect_to root_path
+    else
+      render :edit
+    end
+    
+  end
 
-    redirect_to root_path
+  def destroy
+    @post = Post.find(params[:id])
+    @post.user = current_user
+    @post.destroy
+
+    redirect_to root_path    
   end
 
 

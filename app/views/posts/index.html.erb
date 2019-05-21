@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container pt-5">
     <div class="row">
         <div class="col-xl">
             <% @posts.each do |post| %>
@@ -21,7 +21,7 @@
                         <% if user_signed_in? %>
                             <% if current_user.id == post.user_id %>
                                 <%= link_to  "Editar", edit_post_path(post), class: "btn btn-outline-secondary btn-sm" %>
-                                <%= link_to  "Eliminar", post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %>
+                                <%= link_to  "Eliminar", post, method: :delete, data: { confirm: '¿Está seguro que desea eliminar el post?' }, class: "btn btn-outline-danger btn-sm" %>
                             <% end %>                          
                         <% end %>
                         
