@@ -3,7 +3,7 @@
     <div class="col">
       
       <h1><%= @post.new_record? ? "Nuevo Post" : "Editar Post" %></h1>
-      <div class="col-sm-4">
+      <div class="col-sm-5">
         <% if @post.errors.any? %>
           <ul>
             <% @post.errors.full_messages.each do |message| %>
@@ -25,6 +25,7 @@
         </div>
         <div class="action">
           <%= f.submit @post.new_record? ? "Crear Post" : "Editar Post", class: "btn btn-primary btn-lg" %>
+          <%= link_to  "Volver", root_path, class: "btn btn-link" %>
         </div>
       <% end %>
     

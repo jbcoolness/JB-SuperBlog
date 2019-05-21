@@ -10,7 +10,7 @@
                   <div class="col-md-9">
                     <div class="card-body">
                       <h2 class="card-title"> <%= post.title %> </h2>                      
-                      <p class="card-text"><small class="text-muted"> Creado hace <%= time_ago_in_words(post.created_at) %> Por: <%= post.user_id %> </small></p>
+                      <p class="card-text"><small class="text-muted"> Creado hace <%= time_ago_in_words(post.created_at) %> Por: <%= post.user.username %> </small></p>
                       <p class="card-text">
                         <%if post.content.length > 250 %> 
                           <%= truncate(post.content, length: 250) %>

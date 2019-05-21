@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :private_access, except: [:index, :show]
+  
   def index
     @posts = Post.all
   end
@@ -30,10 +32,9 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.user = current_user
+    @post.user = current_user    
     
-    @post.update(post_params)
-    if @post.save
+    if @post.update(post_params)
       flash[:notice] = "Post actualizado correctamente"
       redirect_to root_path
     else
@@ -43,9 +44,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.user = current_user
-    @post.destroy
+    post = Post.find(params[:id])
+    post.user = current_user
+    post.destroy
+    flash[:notice] = "Post eliminado correctamente"
 
     redirect_to root_path    
   end
