@@ -6,6 +6,34 @@
             <img src="<%= @post.image %>" class="img-fluid" alt="Responsive image">
 
             <p class="mt-3 mb-5"> <%= @post.content %> </p>
+
+            <div class="comments pb-5">
+                <h4>Comentarios</h4>
+
+                <% @post.comments.each do |comment| %>
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            Usuario: <%= comment.user.username %>
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p> <%= comment.content %> </p> 
+                            </blockquote>
+                        </div>
+                    </div>
+                <% end %>
+                <% if user_signed_in? %>
+                    <%= form_for [@post, @post.comments.build] do |f| %>    
+                        <div class="form-group">
+                            <%= f.text_area :content, class: "form-control", placeholder: "Escriba su comentario" %>
+                        </div>                        
+                        <div class="action">
+                            <%= f.submit "Comentar", class: "btn btn-primary btn-lg" %>
+                            <%= link_to  "Volver", root_path, class: "btn btn-link" %>
+                        </div>
+                    <% end %>
+                <% end %>
+            </div>
         </div>
     </div>
 </div>

@@ -13,7 +13,7 @@
 
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :comment
+  has_many :comments
 
   validates :title, :content, presence: true
   validates :content, length: { minimum: 250 }
