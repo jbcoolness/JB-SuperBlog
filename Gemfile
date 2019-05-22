@@ -27,6 +27,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Para a notar o listar los modelos
+gem 'annotate'
+
 # Gema de Devise
 gem 'devise'
 # Gema de bootstrap
