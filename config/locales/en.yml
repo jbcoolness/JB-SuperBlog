@@ -45,11 +45,7 @@ en:
         title: "Título"
         content: "Contenido"
 
-# en:
-#   activerecord:
-#     errors:
-#       models:
-#         post:
-#           attributes:
-#             title:
-#               blank: "El campo título no puede quedar vacío"
+  activerecord:
+    attributes:
+      comment:
+        content: "Comentario"
