@@ -32,11 +32,24 @@
 
 # menssage validation
 # https://stackoverflow.com/questions/808547/fully-custom-validation-error-message-with-rails
+
 en:
+  errors:
+    messages:
+      blank: "no puede estar vacío"
+      too_short: "debe ser mayor que 250 caracteres"
+
   activerecord:
-    errors:
-      models:
-        post:
-          attributes:
-            title:
-              blank: "El campo título no puede quedar vacío"
+    attributes:
+      post:
+        title: "Título"
+        content: "Contenido"
+
+# en:
+#   activerecord:
+#     errors:
+#       models:
+#         post:
+#           attributes:
+#             title:
+#               blank: "El campo título no puede quedar vacío"
