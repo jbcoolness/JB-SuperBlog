@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
         @post = Post.find(params[:post_id])
         @post.comments.create(comments_params)
       
-        redirect_to post
+        redirect_to @post
     end
 
     
