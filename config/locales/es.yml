@@ -1,5 +1,9 @@
 ---
 es:
+  will_paginate:
+    previous_label: "&#8592; atras -"
+    next_label: "- siguiente &#8594;"
+    page_gap: "&hellip;"
   activerecord:
     errors:
       messages:

@@ -39,6 +39,9 @@ gem 'jquery-rails'
 # Comments support Markdown
 gem 'redcarpet', '~> 3.0.0'
 
+# pagination post list
+gem 'will_paginate'
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
