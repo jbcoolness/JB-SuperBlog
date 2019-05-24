@@ -29,15 +29,17 @@
       </ul> -->
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
-        <li class="nav-item mr-3">
-            <h5 class="nav-link">Hola <%= current_user.username %>!</h5>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Nuevo Post", new_post_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">          
-            <%= link_to "Salir", destroy_user_session_path, method: :delete, class: "nav-link" %>
-          </li>
+        <li class="nav-item dropdown mr-3">
+            <h6 class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Hola <%= current_user.username %>!
+            </h6>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to "Nuevo Post", new_post_path, class: "dropdown-item" %>
+                <%= link_to "Editar cuenta", edit_user_registration_path, class: "dropdown-item" %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Salir", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>          
           <% else %>
           <li class="nav-item">
             <%= link_to "Ingresar", user_session_path, class: "nav-link" %>
