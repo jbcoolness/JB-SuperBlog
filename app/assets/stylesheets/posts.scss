@@ -1,6 +1,21 @@
+body{
+    background-image:url("https://images.unsplash.com/photo-1489755730820-cd90f9a49424?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80");
+    position: relative;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+// .fixed-top{
+//     position: fixed;
+//     z-index: 1030;
+// }
+
 .card {
     img{
-    height: 100%;        
+        max-width: 300px;
+        height: auto;        
+        display: flex;
     }
 }
 
@@ -17,3 +32,9 @@
 .p-comment {
     font-size: 16px;
 }
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 18px;
+  }
