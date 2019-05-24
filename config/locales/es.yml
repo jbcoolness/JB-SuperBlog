@@ -20,6 +20,7 @@ es:
     attributes:
       user:
         email: "Correo electrónico"
+        password_confirmation: "Confirmación de contraseña"
   date:
     abbr_day_names:
     - dom
