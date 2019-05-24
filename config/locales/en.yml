@@ -34,18 +34,4 @@
 # https://stackoverflow.com/questions/808547/fully-custom-validation-error-message-with-rails
 
 en:
-  errors:
-    messages:
-      blank: "no puede estar vacío"
-      too_short: "debe ser mayor que 250 caracteres"
-
-  activerecord:
-    attributes:
-      post:
-        title: "Título"
-        content: "Contenido"
-
-  activerecord:
-    attributes:
-      comment:
-        content: "Comentario"
+  hello: "Hello World"
