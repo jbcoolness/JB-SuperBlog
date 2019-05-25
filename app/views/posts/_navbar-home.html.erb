@@ -12,6 +12,7 @@
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
         <li class="nav-item dropdown mr-3">
+            <%= image_tag gravatar_url(current_user.email , 50), alt: "" %>
             <h6 class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Hola <%= current_user.username %>!
             </h6>

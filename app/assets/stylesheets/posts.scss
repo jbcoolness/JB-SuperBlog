@@ -20,15 +20,33 @@ body{
     color: white;
     
     .navbar{
-        background-color: transparent !important;
+        // background-color: transparent !important;
         .nav-link, .dropdown-item, a, h6 {
             color: white;
             font-weight: bold;
             text-decoration: none;
         }
-    }
-    
+    }    
+}
 
+.navbar-light .navbar-nav .nav-link .dropdown-item {
+    color: white;
+    }
+    /*  Este es para el elemento activo lo puedes omitir si asi deseas */
+    .navbar-light .navbar-nav :hover{
+        .nav-link  {
+        color: rgb(206, 201, 201);
+    }
+}
+
+
+@media only screen and (min-width: 992px) {
+    .navbar {
+        background: transparent !important;
+        .nav-link, .dropdown-item, a, h6 {
+        color: black;
+    }
+  }
 }
 
 .card {
@@ -42,6 +60,7 @@ body{
 
 .card:hover {
     background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
   }
 
 .img-show {
@@ -64,7 +83,13 @@ body{
     font-size: 16px;
 }
 
+.sesion-devise {
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
 footer {
+    background-position-y: bottom;
     margin-top: 170px;
     align-self: flex-end;
     text-align: center;
