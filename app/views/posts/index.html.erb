@@ -1,3 +1,6 @@
+<header>
+    <%= render 'posts/navbar-home' %>
+</header>
 <div class="container pt-5">
     <div class="row">
         <div class="col-xl">
@@ -35,15 +38,12 @@
             <% end %>
             
             <div class="row align-items-center">
-              <div class="col-md-5"></div>
+              <div class="col-md-4"></div>
             <div class="apple_pagination col-sm-4 align-self-center">
                 <%= will_paginate @posts, :container => false %>
             </div>
             <div class="col-md-4"></div>
           </div>
-              
-
-
         </div>
     </div>
 </div>
