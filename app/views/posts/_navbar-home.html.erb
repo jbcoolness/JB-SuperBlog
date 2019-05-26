@@ -11,19 +11,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
-        <li class="nav-item dropdown mr-3">
-            <!-- <%= image_tag gravatar_url(current_user.email , 50), alt: "" %> -->
-            <h6 class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <li><%= image_tag gravatar_url(current_user.email , 40), class: "rounded-circle" %></li>
+          <li class="nav-item dropdown mr-3">            
+            <h6 class="nav-link dropdown-toggle mr-4" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Hola <%= current_user.username %>!
             </h6>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <%= link_to "Nuevo Post", new_post_path, class: "dropdown-item" %>
                 <%= link_to "Editar cuenta", edit_user_registration_path, class: "dropdown-item" %>
-              <div class="dropdown-divider"></div>
-              <%= link_to "Salir", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Salir", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>          
-          <% else %>
+        <% else %>
           <li class="nav-item">
             <%= link_to "Ingresar", user_session_path, class: "nav-link" %>
           </li>
