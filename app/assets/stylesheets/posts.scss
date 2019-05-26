@@ -20,33 +20,36 @@ body{
     color: white;
     
     .navbar{
-        // background-color: transparent !important;
-        .nav-link, .dropdown-item, a, h6 {
+        .nav-link, .dropdown-menu, .dropdown-item, a, h6 {
+            background:transparent !important;
             color: white;
             font-weight: bold;
             text-decoration: none;
         }
+        .dropdown-item:hover {
+            color: gray;
+          }
     }    
-}
-
-.navbar-light .navbar-nav .nav-link .dropdown-item {
-    color: white;
-    }
-    /*  Este es para el elemento activo lo puedes omitir si asi deseas */
-    .navbar-light .navbar-nav :hover{
-        .nav-link  {
-        color: rgb(206, 201, 201);
-    }
 }
 
 
 @media only screen and (min-width: 992px) {
-    .navbar {
+    .navbar, .dropdown-menu {
         background: transparent !important;
         .nav-link, .dropdown-item, a, h6 {
         color: black;
     }
   }
+  .dropdown-menu {
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+  }
+//   .navbar{
+//     .dropdown-item:hover {
+//         color: black;    
+//       }
+//   }
 }
 
 .card {
