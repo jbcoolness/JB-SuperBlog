@@ -92,6 +92,13 @@ body{
 }
 
 footer {
+    a {
+        text-decoration: none;
+        color: black;
+        :hover{
+            color: gray;
+        }
+    }
     background-position-y: bottom;
     margin-top: 170px;
     align-self: flex-end;
