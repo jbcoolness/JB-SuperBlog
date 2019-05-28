@@ -12,10 +12,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body>    
     
-    
-    
+    <!-- show alerts -->
     <div class="alerts text-center">
       <% if flash[:notice] %>
         <div class="alert alert-success">
@@ -27,8 +26,8 @@
         </div>
       <% end %>
     </div>
-    <!-- <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p> -->
+    <!-- show alerts -->
+
 
     
     <%= yield %>
@@ -40,19 +39,19 @@
   <footer class="footer footer-light bg-light p-3">
     <a href="https://twitter.com/BerttyJulio" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
     <a href="https://www.instagram.com/jbcoolness" target="_blank"><span class="fa fa-instagram fa-2x"></span></a>
-    <a href="https://github.com/jbcoolness" target="_blank"><span class="fa fa-github fa-2x"></span></a>          
+    <a href="https://github.com/jbcoolness" ><span class="fa fa-github fa-2x"></span></a>          
     <br>
     © 2019 <strong>Julio Bertty</strong>, Todos los Derechos Reservados
   </footer>
   <!-- Footer -->
     
 
-    <!-- alerts -->
-    <script>
-        $(".alert").fadeIn(500).css("opacity", "0.85").delay(6000).slideUp(1000);
-        $(".alerts").on('click', '.alert', function(){ $(this).remove() });
-    </script>
-    <!-- alerts -->
+  <!-- hide alerts -->
+  <script>
+    $(".alert").fadeIn(500).css("opacity", "0.85").delay(6000).slideUp(1000);
+    $(".alerts").on('click', '.alert', function(){ $(this).remove() });
+  </script>
+  <!-- hide alerts -->
   
   </body>
 </html>
