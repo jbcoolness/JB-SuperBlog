@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
   before_action :private_access, except: [:index, :show]
+  before_action :is_user?, except: [:index, :show]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+
   
   def index
     @posts = Post.all.paginate(page: params[:page], per_page: 4).order('created_at DESC')
@@ -22,17 +25,15 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+
   end
 
   def edit
-    @post = Post.find(params[:id])
-    @post.user = current_user
+    
   end
 
-  def update
-    @post = Post.find(params[:id])
-    @post.user = current_user    
+  
+  def update    
     
     if @post.update(post_params)
       flash[:notice] = "Post actualizado correctamente"
@@ -44,8 +45,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    post = Post.find(params[:id])
-    post.user = current_user
     post.destroy
     flash[:notice] = "Post eliminado correctamente"
 
@@ -54,7 +53,12 @@ class PostsController < ApplicationController
 
 
 
+  
   private
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:user_id, :title, :image, :content)
