@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :private_access, except: [:index, :show]
-  before_action :is_user?, except: [:index, :show]
+  before_action :is_user?, except: [:index, :show, :new, :create]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   

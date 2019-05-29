@@ -25,11 +25,13 @@
                         </div>
                     </div>
                 <% end %>
+
+                
     
                 <% if user_signed_in? %>
                     <%= form_for [@post, @post.comments.build] do |f| %>    
                         <div class="form-group">
-                            <%= f.text_area :content, class: "form-control", placeholder: "Escriba su comentario (soporta Markdown)" %>
+                            <%= f.text_area :content, class: "form-control", id:"contentComment", placeholder: "Escriba su comentario (soporta Markdown)" %>
                         </div>                        
                         <div class="action">
                             <%= f.submit "Comentar", class: "btn btn-primary btn-lg" %>
