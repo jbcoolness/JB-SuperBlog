@@ -36,7 +36,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
 # Comments support Markdown
-gem 'redcarpet', '~> 3.0.0'
+gem 'redcarpet', '~> 3.5.1'
 
 # pagination post list
 gem 'will_paginate'
